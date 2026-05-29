@@ -4,46 +4,80 @@
 
 # ETAPA 1 – Compreensão do Problema e do Sistema
 
-O objetivo principal do sistema é realizar o cadastro e gerenciamento de alunos por meio de uma aplicação mobile desenvolvida em React Native.
+## Objetivo do Sistema
 
-O sistema permite armazenar informações acadêmicas básicas dos alunos em um banco de dados em nuvem utilizando Firebase Firestore. A aplicação possui funcionalidades de cadastro, listagem, edição e exclusão de registros, seguindo o modelo CRUD.
+O objetivo principal do sistema é realizar o cadastro e gerenciamento de alunos por meio de uma aplicação mobile desenvolvida em React Native com Expo Router.
 
-## Informações cadastradas
+A aplicação permite armazenar informações acadêmicas básicas dos alunos em um banco de dados em nuvem utilizando Firebase Firestore.
+
+O sistema possui funcionalidades de:
+
+* Cadastro de alunos
+* Listagem de alunos
+* Atualização de dados
+* Exclusão de registros
+
+Seguindo o modelo CRUD.
+
+---
+
+# Informações Cadastradas
+
+Os dados armazenados pelo sistema incluem:
 
 * Matrícula
 * Nome
 * E-mail
 
-Essas informações são enviadas pela interface mobile para a camada de lógica da aplicação e posteriormente armazenadas no banco de dados.
+Essas informações são enviadas pela interface mobile para a camada de lógica da aplicação e posteriormente armazenadas no Firebase Firestore.
 
-## Operações do Sistema
+---
 
-* Create (Cadastro de alunos)
-* Read (Listagem de alunos)
-* Update (Edição de alunos)
-* Delete (Exclusão de alunos)
+# Operações do Sistema
 
-## Público-alvo
+## Create
 
-O usuário final da aplicação será:
+Cadastro de novos alunos.
 
-* Administrador escolar
-* Secretário acadêmico
-* Responsável pelo gerenciamento dos alunos cadastrados
+## Read
 
-## Funcionamento Geral
+Listagem dos alunos cadastrados.
 
-1. O usuário acessa a interface mobile.
-2. Preenche os dados do aluno em um formulário.
-3. Envia as informações.
-4. A aplicação processa os dados.
-5. O sistema realiza comunicação com o Firebase Firestore.
+## Update
+
+Atualização das informações dos alunos.
+
+## Delete
+
+Exclusão de registros.
+
+---
+
+# Público-Alvo
+
+O sistema é destinado para:
+
+* Administradores escolares
+* Secretários acadêmicos
+* Responsáveis pelo gerenciamento dos alunos cadastrados
+
+---
+
+# Funcionamento Geral do Sistema
+
+1. O usuário acessa a aplicação mobile.
+2. O usuário preenche o formulário de cadastro.
+3. Os dados são enviados pela interface.
+4. A aplicação processa as informações.
+5. O sistema se comunica com o Firebase Firestore.
 6. Os dados são armazenados ou atualizados.
 7. A lista de alunos é atualizada automaticamente.
 
-## Repositório do Projeto
+---
 
-```bash[
+# Repositório do Projeto
+
+```bash
 https://github.com/csscami/app_mobile
 ```
 
@@ -51,32 +85,61 @@ https://github.com/csscami/app_mobile
 
 # ETAPA 2 – Identificação das Tecnologias Utilizadas
 
-| Tecnologia              | Função no Sistema                        | Onde é Utilizada                     | Objetivo                                     |
-| ----------------------- | ---------------------------------------- | ------------------------------------ | -------------------------------------------- |
-| React Native            | Desenvolvimento da interface mobile      | Screens, Components e navegação      | Criar a interface visual do aplicativo       |
-| JavaScript / TypeScript | Implementação da lógica da aplicação     | Controllers, hooks e serviços        | Controlar regras de negócio e fluxo de dados |
-| Firebase                | Plataforma backend em nuvem              | Integração da aplicação com serviços | Gerenciar autenticação e conexão com banco   |
-| Firestore               | Banco de dados NoSQL em nuvem            | Operações CRUD                       | Armazenar e recuperar os dados dos alunos    |
-| React Navigation        | Navegação entre telas                    | Estrutura de rotas                   | Permitir transição entre telas da aplicação  |
-| Expo (opcional)         | Ambiente de desenvolvimento React Native | Execução e testes                    | Facilitar desenvolvimento e execução mobile  |
+| Tecnologia                     | Função no Sistema                        | Onde é Utilizada         | Objetivo                                   |
+| ------------------------------ | ---------------------------------------- | ------------------------ | ------------------------------------------ |
+| React Native                   | Desenvolvimento da interface mobile      | Componentes e telas      | Criar a interface visual do aplicativo     |
+| TypeScript                     | Implementação da lógica da aplicação     | Arquivos .tsx e serviços | Garantir tipagem e organização do código   |
+| Expo                           | Ambiente de desenvolvimento React Native | Execução da aplicação    | Facilitar desenvolvimento e testes         |
+| Expo Router                    | Navegação baseada em arquivos            | Pasta app/               | Gerenciar rotas e navegação entre telas    |
+| Firebase                       | Plataforma backend em nuvem              | Integração da aplicação  | Gerenciar comunicação com serviços         |
+| Firestore                      | Banco de dados NoSQL em nuvem            | Operações CRUD           | Armazenar e recuperar os dados dos alunos  |
+| React Native Safe Area Context | Gerenciamento de área segura             | Layout da aplicação      | Ajustar telas para diferentes dispositivos |
 
-## Explicação das Tecnologias
+---
 
-### React Native
+# Explicação das Tecnologias
 
-Utilizado para construir a interface gráfica da aplicação mobile, permitindo criar telas, formulários, botões e listas de forma nativa para Android e iOS.
+## React Native
 
-### JavaScript / TypeScript
+Utilizado para construir a interface gráfica da aplicação mobile, permitindo criar telas, formulários, listas e componentes visuais compatíveis com Android e iOS.
 
-Responsável pela lógica da aplicação, incluindo validação de dados, chamadas ao Firebase e gerenciamento do fluxo de informações.
+---
 
-### Firebase
+## TypeScript
 
-Funcionará como plataforma backend, fornecendo integração com o banco de dados em nuvem.
+Responsável pela implementação da lógica da aplicação com tipagem estática, melhorando organização, manutenção e segurança do código.
 
-### Firestore
+---
 
-Será utilizado para armazenar os dados dos alunos de forma organizada e sincronizada em tempo real.
+## Expo
+
+Ferramenta utilizada para facilitar o desenvolvimento da aplicação React Native, permitindo execução simplificada e testes rápidos.
+
+---
+
+## Expo Router
+
+Sistema de navegação baseado em arquivos utilizado pelo projeto.
+
+As rotas são organizadas dentro da pasta:
+
+```bash
+src/app/
+```
+
+Cada arquivo representa uma tela da aplicação.
+
+---
+
+## Firebase
+
+Plataforma backend utilizada para integração com serviços em nuvem.
+
+---
+
+## Firestore
+
+Banco de dados NoSQL utilizado para armazenar os dados dos alunos de forma organizada e sincronizada em tempo real.
 
 ---
 
@@ -84,271 +147,354 @@ Será utilizado para armazenar os dados dos alunos de forma organizada e sincron
 
 # Arquitetura Adotada
 
-O projeto será organizado em uma arquitetura baseada em separação de responsabilidades, dividida em três camadas principais.
+O projeto utiliza arquitetura baseada em separação de responsabilidades.
+
+A estrutura é dividida em camadas responsáveis por:
+
+* Interface
+* Lógica de aplicação
+* Persistência de dados
 
 ---
 
-## 1. Camada de Apresentação (UI)
-
-### Pastas/Arquivos
+# Estrutura Atual do Projeto
 
 ```bash
-screens/
+src/
+ ├── app/
+ ├── components/
+ ├── constants/
+ ├── firebase/
+ ├── hooks/
+ ├── services/
+```
+
+---
+
+# 1. Camada de Apresentação (UI)
+
+## Pastas Responsáveis
+
+```bash
+app/
 components/
-App.js
 ```
-
-### Função
-
-Exibir formulários, listas, botões e telas para interação do usuário.
 
 ---
 
-## 2. Camada de Lógica de Aplicação
+## Função
 
-### Pastas/Arquivos
+Responsável por exibir:
+
+* Telas
+* Formulários
+* Botões
+* Listas
+* Componentes visuais
+
+A pasta `app/` organiza as telas utilizando Expo Router.
+
+A pasta `components/` contém componentes reutilizáveis da interface.
+
+---
+
+## Exemplos do Projeto
+
+### Arquivos da Navegação
 
 ```bash
-services/
-controllers/
-hooks/
+src/app/_layout.tsx
+src/app/index.tsx
+src/app/explore.tsx
 ```
 
-### Função
+### Componentes
 
-Executar operações CRUD, validar dados e controlar o fluxo da aplicação.
+```bash
+src/components/
+```
 
 ---
 
-## 3. Camada de Dados
+# 2. Camada de Lógica da Aplicação
 
-### Pastas/Arquivos
+## Pastas Responsáveis
+
+```bash
+hooks/
+services/
+```
+
+---
+
+## Função
+
+Executar:
+
+* Operações CRUD
+* Regras de negócio
+* Validação de dados
+* Comunicação com Firebase
+* Controle do fluxo da aplicação
+
+---
+
+## Hooks
+
+A pasta `hooks/` contém lógica reutilizável da aplicação.
+
+Exemplo:
+
+```bash
+hooks/use-theme.ts
+```
+
+---
+
+## Services
+
+A pasta `services/` é responsável pela comunicação com Firebase e operações relacionadas aos dados.
+
+Exemplos de responsabilidades:
+
+* cadastrarAluno()
+* listarAlunos()
+* atualizarAluno()
+* excluirAluno()
+
+---
+
+# 3. Camada de Dados
+
+## Pasta Responsável
 
 ```bash
 firebase/
-config/firebaseConfig.js
 ```
-
-### Função
-
-Realizar conexão com Firebase Firestore e persistência dos dados.
 
 ---
 
-## Comunicação entre as Camadas
+## Função
 
-A interface envia os dados para os serviços e controllers. Os serviços realizam as operações necessárias e se comunicam com o Firebase Firestore.
+Responsável pela configuração e comunicação com o Firebase Firestore.
 
-Após a conclusão da operação, os dados retornam para a interface atualizada.
+Essa camada realiza:
 
-### Fluxo Simplificado
+* Conexão com banco de dados
+* Persistência dos dados
+* Recuperação de informações
+* Atualização de registros
+* Exclusão de documentos
+
+---
+
+# Comunicação Entre as Camadas
+
+A interface envia os dados para os serviços.
+
+Os serviços processam as informações e realizam comunicação com o Firebase Firestore.
+
+Após a operação, os dados retornam para a interface atualizada.
+
+---
+
+# Fluxo Simplificado
 
 ```bash
-UI → Services/Controllers → Firebase Firestore → Retorno para UI
+UI → Services/Hooks → Firebase Firestore → Retorno para UI
 ```
 
 ---
 
 # ETAPA 4 – Análise do Fluxo de Dados do Sistema
 
-## Cadastro de Aluno
+# Cadastro de Aluno
 
 1. O usuário preenche o formulário.
-2. Ao clicar em “Cadastrar”, a interface envia os dados.
-3. O controller ou service valida as informações.
+2. A interface envia os dados.
+3. Os serviços validam as informações.
 4. O Firebase Firestore recebe os dados.
-5. O aluno é salvo na coleção `alunos`.
-6. A lista de alunos é atualizada na tela.
+5. O aluno é salvo na coleção correspondente.
+6. A interface atualiza automaticamente.
 
 ---
 
-## Listagem de Alunos
+# Listagem de Alunos
 
-1. A tela principal solicita os dados ao serviço.
-2. O serviço consulta a coleção `alunos` no Firestore.
-3. O banco retorna os registros cadastrados.
+1. A tela solicita os dados aos serviços.
+2. O serviço consulta o Firestore.
+3. O banco retorna os registros.
 4. A interface renderiza os alunos em lista.
 
 ---
 
-## Edição de Aluno
+# Atualização de Dados
 
 1. O usuário seleciona um aluno.
 2. Os dados são carregados no formulário.
 3. O usuário altera as informações.
-4. A aplicação envia os novos dados ao Firestore.
-5. O registro é atualizado no banco.
-6. A interface atualiza a lista automaticamente.
+4. Os novos dados são enviados ao Firestore.
+5. O registro é atualizado.
+6. A interface atualiza automaticamente.
 
 ---
 
-## Exclusão de Aluno
+# Exclusão de Registros
 
-1. O usuário seleciona a opção “Excluir”.
+1. O usuário seleciona a opção de exclusão.
 2. A aplicação solicita confirmação.
 3. O serviço envia a solicitação ao Firestore.
-4. O registro é removido da coleção.
-5. A lista é atualizada na interface.
+4. O registro é removido.
+5. A interface atualiza a lista automaticamente.
 
 ---
 
 # ETAPA 5 – Organização do Código por Responsabilidades
 
-## Componentes Responsáveis pela Interface
+# Componentes Responsáveis pela Interface
 
-### Screens
+## Pasta app/
 
-```bash
-HomeScreen.js
-CadastroAlunoScreen.js
-```
+Responsável pelas telas e navegação da aplicação.
 
-### Components
+### Exemplos do Projeto
 
 ```bash
-AlunoCard.js
-FormAluno.js
-ButtonCustom.js
+index.tsx
+explore.tsx
+_layout.tsx
 ```
-
-### Função
-
-Exibir telas, formulários e componentes visuais.
 
 ---
 
-## Serviços Responsáveis pelo Cadastro
+## Pasta components/
 
-### Arquivo
+Responsável pelos componentes reutilizáveis da interface.
+
+### Exemplos encontrados no projeto
 
 ```bash
-services/alunoService.js
+themed-text.tsx
+themed-view.tsx
+external-link.tsx
+web-badge.tsx
 ```
 
-### Funções
+---
 
-```javascript
+# Responsabilidades da Camada de Serviços
+
+## Pasta services/
+
+Responsável por:
+
+* Comunicação com Firebase
+* Operações CRUD
+* Regras de negócio
+* Processamento dos dados
+
+---
+
+## Exemplos de Funções
+
+```typescript
 cadastrarAluno()
-```
-
-### Função
-
-Enviar novos registros para o Firestore.
-
----
-
-## Serviços Responsáveis pela Listagem
-
-### Funções
-
-```javascript
 listarAlunos()
-```
-
-### Função
-
-Recuperar alunos cadastrados.
-
----
-
-## Serviços Responsáveis pela Edição
-
-### Funções
-
-```javascript
 atualizarAluno()
-```
-
-### Função
-
-Atualizar informações no banco de dados.
-
----
-
-## Serviços Responsáveis pela Exclusão
-
-### Funções
-
-```javascript
 excluirAluno()
 ```
 
-### Função
+---
 
-Remover registros do Firestore.
+# Responsabilidades da Camada Firebase
+
+## Pasta firebase/
+
+Responsável pela configuração e integração com Firestore.
 
 ---
 
-## Importância da Separação de Responsabilidades
+# Importância da Separação de Responsabilidades
 
-A separação de responsabilidades facilita:
+A separação de responsabilidades proporciona:
 
-* Manutenção do sistema
-* Organização do código
+* Melhor organização do projeto
+* Facilidade de manutenção
 * Redução do acoplamento
-* Facilidade de testes
-* Escalabilidade da aplicação
+* Melhor reutilização de código
+* Facilidade para testes
+* Melhor escalabilidade da aplicação
 
-A interface fica responsável apenas pela exibição dos dados, enquanto os serviços controlam as regras de negócio e a comunicação com o banco de dados.
+A interface fica responsável apenas pela exibição dos dados.
+
+Os serviços controlam a lógica da aplicação e a comunicação com o banco de dados.
 
 ---
 
 # ETAPA 6 – Proposta de Melhoria na Arquitetura
 
-## 1. Criação de Serviços Específicos para Firebase
+# 1. Criação de Serviços Mais Específicos
 
-### Justificativa
+## Justificativa
 
-* Facilita manutenção
+* Melhor organização
 * Evita repetição de código
-* Melhora organização
+* Facilita manutenção
 * Permite reutilização das funções CRUD
 
-### Exemplo
+---
+
+## Exemplo
 
 ```bash
-services/alunoService.js
-services/firebaseService.js
+services/alunoService.ts
+services/firebaseService.ts
 ```
 
 ---
 
-## 2. Uso de Hooks Personalizados
+# 2. Uso de Hooks Personalizados
 
-### Justificativa
+## Justificativa
 
 * Código mais limpo
-* Reutilização de lógica
-* Melhor separação entre UI e regras de negócio
-* Facilita escalabilidade
+* Melhor separação entre interface e lógica
+* Reutilização de funcionalidades
+* Facilidade de escalabilidade
 
-### Exemplo
+---
+
+## Exemplo
 
 ```bash
-hooks/useAlunos.js
+hooks/useAlunos.ts
 ```
 
 ---
 
-## 3. Melhor Organização de Pastas
+# 3. Melhor Organização das Pastas
 
-### Estrutura sugerida
+## Estrutura Atual Recomendada
 
 ```bash
-components/
-screens/
-services/
-hooks/
-navigation/
-firebase/
-styles/
+src/
+ ├── app/
+ ├── components/
+ ├── constants/
+ ├── firebase/
+ ├── hooks/
+ ├── services/
+ ├── styles/
 ```
 
-### Benefícios
+---
+
+# Benefícios
 
 * Melhor legibilidade
 * Facilidade para localizar arquivos
-* Crescimento organizado da aplicação
+* Crescimento organizado do projeto
+* Melhor manutenção futura
 
 ---
 
@@ -362,18 +508,18 @@ Sistema Mobile de Cadastro de Alunos
 
 # Objetivo
 
-Desenvolver uma aplicação mobile em React Native para gerenciamento de alunos utilizando Firebase Firestore como banco de dados.
+Desenvolver uma aplicação mobile utilizando React Native, Expo Router e Firebase Firestore para gerenciamento de alunos.
 
 ---
 
 # Tecnologias Utilizadas
 
 * React Native
-* JavaScript / TypeScript
+* TypeScript
+* Expo
+* Expo Router
 * Firebase
 * Firestore
-* React Navigation
-* Expo
 
 ---
 
@@ -399,8 +545,16 @@ Arquitetura baseada em separação de responsabilidades, dividida em:
 
 # Considerações Finais
 
-O desenvolvimento da aplicação permitiu aplicar conceitos de arquitetura de sistemas, separação de responsabilidades e integração entre interface mobile e banco de dados em nuvem.
+O desenvolvimento da aplicação permitiu aplicar conceitos de:
 
-A utilização do React Native e Firebase proporcionou um desenvolvimento moderno, organizado e escalável, facilitando futuras melhorias e manutenção do sistema.
+* Arquitetura de software
+* Organização de projetos React Native
+* Separação de responsabilidades
+* Integração com banco de dados em nuvem
+* Estruturação modular da aplicação
 
-Além disso, a divisão em camadas contribui para maior clareza do código e melhor estruturação da aplicação.
+A utilização do React Native com Expo Router proporcionou uma estrutura moderna baseada em rotas organizadas por arquivos.
+
+Além disso, a integração com Firebase Firestore permitiu persistência de dados em nuvem de forma simples e eficiente.
+
+A divisão em camadas melhora a clareza do código, facilita manutenção e contribui para futuras expansões da aplicação.
