@@ -44,7 +44,7 @@ O usuário final da aplicação será:
 ## Repositório do Projeto
 
 ```bash[
-https://github.com/seu-usuario/seu-repositorio](https://github.com/csscami/app_mobile/tree/main)
+(https://github.com/csscami/app_mobile/tree/main)
 ```
 
 ---
