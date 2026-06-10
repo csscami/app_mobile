@@ -80,7 +80,11 @@ O sistema é destinado para:
 ```bash
 https://github.com/csscami/app_mobile
 ```
+# Link do APK
 
+```bash
+https://expo.dev/artifacts/eas/Ib7dZUeYqYZ68c5UfdStLIPkgYLqjMyzKAeeLRnjt_Y.apk
+```
 ---
 
 # ETAPA 2 – Identificação das Tecnologias Utilizadas
